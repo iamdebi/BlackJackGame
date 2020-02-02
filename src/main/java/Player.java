@@ -24,13 +24,13 @@ public class Player {
         return totalValue;
     }
 
-//    Delete this
-    public  Card getHandCard(){
-         Card cardReturn = null;
-            for (Card card : getHand()){
-                cardReturn = card;
-                }
-        return cardReturn;
+    public Card getACard() {
+        return hand.get(0);
     }
 
+    public void lessThan16(Card card){
+        if (handValue() < 16){
+            addCard(card);
+        }
+    }
 }

@@ -27,9 +27,4 @@ public class CardTest {
         assertEquals(10, card.getValueFromCard());
     }
 
-//    @Test
-//    public void suitCanBeMispelled(){
-//        card = new Card("Heats");
-//        assertEquals("Heats", card.getSuit());
-//    }
 }

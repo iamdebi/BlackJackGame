@@ -25,14 +25,14 @@ public class GameTest {
     }
 
     @Test
-    public void canStartWithZeroPlayers(){
-        assertEquals(0, game.countPlayers());
+    public void canStartWithADealerPlayers(){
+        assertEquals(1, game.countPlayers());
     }
 
     @Test
     public void canAddPlayer(){
         game.addPlayer(player1);
-        assertEquals(1, game.countPlayers());
+        assertEquals(2, game.countPlayers());
     }
 
     @Test
@@ -40,42 +40,37 @@ public class GameTest {
         game.addPlayer(player1);
         game.addPlayer(player2);
         game.deal();
-        assertNotNull(player1.getHandCard());
-        assertNotNull(player2.getHandCard());
-        assertEquals(48, game.countDeck());
+        assertEquals(46, game.countDeck());
     }
 
-//    @Test
-//    public void canCheckForWinner(){
-//        game.addPlayer(player1);
-//        game.addPlayer(player2);
-//        player1.addCard(card1);
-//        player2.addCard(card2);
-//        assertEquals(player1, game.winner());
-//    }
-//
-//    @Test
-//    public void canCheckForWinnerPlayer2(){
-//        game.addPlayer(player1);
-//        game.addPlayer(player2);
-//        player1.addCard(card2);
-//        player2.addCard(card1);
-//        assertEquals(player2, game.winner());
-//    }
-//
-//    @Test
-//    public void canCheckForWinnerPlayer3(){
-//        game.addPlayer(player1);
-//        game.addPlayer(player2);
-//        game.addPlayer(player3);
-//        player1.addCard(card1);
-//        player2.addCard(card2);
-//        player3.addCard(card3);
-//        assertEquals(player3, game.winner());
-//    }
+    @Test
+    public void canCheckForWinner(){
+        game.addPlayer(player1);
+        game.addPlayer(player2);
+        player1.addCard(card1);
+        player2.addCard(card2);
+        assertEquals(player1, game.winner());
+    }
 
+    @Test
+    public void canCheckForWinnerPlayer2(){
+        game.addPlayer(player1);
+        game.addPlayer(player2);
+        player1.addCard(card2);
+        player2.addCard(card1);
+        assertEquals(player2, game.winner());
+    }
 
-
+    @Test
+    public void canCheckForWinnerPlayer3(){
+        game.addPlayer(player1);
+        game.addPlayer(player2);
+        game.addPlayer(player3);
+        player1.addCard(card1);
+        player2.addCard(card2);
+        player3.addCard(card3);
+        assertEquals(player3, game.winner());
+    }
 
 
 }
