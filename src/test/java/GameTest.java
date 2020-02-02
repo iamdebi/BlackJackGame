@@ -16,9 +16,9 @@ public class GameTest {
     @Before
     public void before(){
         game = new Game();
-        player1 = new Player();
-        player2 = new Player();
-        player3 = new Player();
+        player1 = new Player("Player1");
+        player2 = new Player("player2");
+        player3 = new Player("player3");
         card1 = new Card(SuitType.CLUBS, RankType.EIGHT);
         card2 = new Card(SuitType.CLUBS, RankType.FIVE);
         card3 = new Card(SuitType.CLUBS, RankType.TEN);

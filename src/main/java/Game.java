@@ -9,7 +9,7 @@ public class Game {
     public Game() {
         this.players = new ArrayList<Player>();
         this.deck = new Deck();
-        this.dealer = new Player();
+        this.dealer = new Player("dealer");
         this.players.add(this.dealer);
 
     }
