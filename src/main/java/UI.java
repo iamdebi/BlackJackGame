@@ -29,6 +29,18 @@ public class UI {
         game.deal();
     }
 
+    public void stickOrTwist() {
+        for (int i = 1; i < game.countPlayers(); i++) {
+            for (Player player : game.getPlayers()) {
+                int handValue = player.handValue();
+                Scanner sc = new Scanner(System.in);
+                System.out.println(player.getName() + ", it's your turn and your current hand value is " + handValue + ". Would you like to stick or twist?");
+                String result = sc.nextLine();
+                game.stickOrTwist(player, result);
+            }
+        }
+    }
+
     public Player winner(){
         return game.winner();
     }

@@ -14,6 +14,10 @@ public class Game {
 
     }
 
+    public Deck getDeck() {
+        return this.deck;
+    }
+
     public int countPlayers() {
         return this.players.size();
     }
@@ -37,6 +41,10 @@ public class Game {
         this.dealer.lessThan16(this.deck.dealCard());
     }
 
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+
     public Player winner() {
         Player winningPlayer = players.get(0);
         for(Player player : players){
@@ -48,4 +56,24 @@ public class Game {
         return winningPlayer;
     }
 
+    public Player getPlayerByName(String name){
+        Player returnPlayer = null;
+        for(Player player: players){
+            if (player.getName() == name) {
+                returnPlayer = player;
+            }
+        }
+        return  returnPlayer;
+    }
+
+    public void stickOrTwist(Player player, String result){
+        if (result.equals("twist") && player.handValue() <= 21) {
+            Card card = getDeck().dealCard();
+            player.addCard(card);
+            stickOrTwist(player, result);
+        }
+    }
+
+    public void blackJack(){
+    }
 }

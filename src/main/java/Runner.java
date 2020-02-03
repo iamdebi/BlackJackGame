@@ -5,6 +5,7 @@ public class Runner {
         int numberPlayers = ui.getPlayerNumber();
         ui.getPlayerName(numberPlayers);
         ui.startGame();
+        ui.stickOrTwist();
         Player winner = ui.winner();
         ui.printWinner(winner);
 
